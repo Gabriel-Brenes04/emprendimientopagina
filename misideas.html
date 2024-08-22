@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimientos - Plataforma de Emprendedores</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            display: inline-block;
+        }
+
+        .navbar input[type="text"] {
+            padding: 8px;
+            width: 200px;
+            margin-left: 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .main-container {
+            display: flex;
+            margin-top: 70px; /* espacio para la barra de navegación */
+        }
+
+        .sidebar {
+            width: 20%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .feed {
+            width: 60%;
+            padding: 20px;
+        }
+
+        .post {
+            background-color: #B8860B;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h3 {
+            margin: 0;
+        }
+
+        .post p {
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .post .tags {
+            margin-top: 10px;
+        }
+
+        .post .tags span {
+            background-color: #B8860B;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        .ads {
+            width: 20%;
+            padding: 20px;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .feed {
+                width: 100%;
+            }
+
+            .ads {
+                display: none;
+            }
+        }
+
+        img{
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>Plataforma de Emprendedores</h1>
+        <input type="text" placeholder="Buscar emprendimientos...">
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Barra lateral -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Mis ideas</a></li>
+                <li><a href="emprendedorees.html">Emprendedores</a></li>
+                <li><a href="#">Mensajes</a></li>
+                <li><a href="#">Configuración</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección de publicaciones (feed) -->
+        <div class="feed">
+            <div class="post">
+                <h3>Idea de Negocio 1</h3>
+                <p>Descripción breve de la idea de negocio. Esta idea propone una nueva forma de entregar productos a domicilio mediante una aplicación móvil.</p>
+                <img src="laburo.png" alt="trabajo">
+                <div class="tags">
+                    <span>#Tecnología</span>
+                    <span>#Logística</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Idea de Negocio 2</h3>
+                <p>Una tienda de productos orgánicos locales, que conecta a agricultores con consumidores a través de una plataforma en línea.</p>
+                <div class="tags">
+                    <span>#Comercio</span>
+                    <span>#Salud</span>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Idea de Negocio 3</h3>
+                <p>Plataforma de servicios freelance para desarrolladores y diseñadores en América Latina.</p>
+                <div class="tags">
+                    <span>#Freelance</span>
+                    <span>#Tecnología</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Espacio para anuncios o información adicional -->
+        <div class="ads">
+            <h3>Anuncio</h3>
+            <p>Descubre cómo obtener financiamiento para tu idea de negocio.</p>
+            <img src="images.jfif" alt="">
+            <img src="images2.jfif" alt="">
+        </div>
+
+    </div>
+
+</body>
+</html>

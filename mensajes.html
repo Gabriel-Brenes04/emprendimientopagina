@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <a href="dashboard.html"><title>Mensajes - Plataforma de Emprendedores</title></a>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            margin: 0;
+        }
+
+        .main-container {
+            display: flex;
+            margin-top: 70px; /* espacio para la barra de navegación */
+            height: calc(100vh - 70px); /* altura ajustada al espacio restante */
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.hide {
+            transform: translateX(-100%);
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .sidebar ul li a.active {
+            background-color: #0779e4;
+            color: white;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .chat-container {
+            width: 75%;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-container.hide {
+            transform: translateX(100%);
+        }
+
+        .chat-header {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chat-header h2 {
+            margin: 0;
+        }
+
+        .chat-header button {
+            background-color: #0779e4;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chat-header button:hover {
+            background-color: #055a8c;
+        }
+
+        .messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .message .avatar {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .message .text {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 60%;
+        }
+
+        .message.sent .text {
+            background-color: #0779e4;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .message.received .text {
+            background-color: #ddd;
+        }
+
+        .chat-input {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .chat-input textarea {
+            width: 80%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            resize: none;
+        }
+
+        .chat-input button {
+            width: 20%;
+            padding: 10px;
+            background-color: #0779e4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover {
+            background-color: #055a8c;
+        }
+
+        /* Estilos responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+
+            .chat-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <h1>Plataforma de Emprendedores</h1>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Barra lateral (conversaciones) -->
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="#" class="active" onclick="showChat('juan')">Juan Pérez</a></li>
+                <li><a href="#" onclick="showChat('maria')">María García</a></li>
+                <li><a href="#" onclick="showChat('carlos')">Carlos Rodríguez</a></li>
+                <!-- Agrega más conversaciones aquí -->
+            </ul>
+        </div>
+
+        <!-- Sección de chat -->
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h2>Juan Pérez</h2>
+                <button onclick="backToConversations()">Volver</button>
+            </div>
+
+            <div class="messages" id="messages">
+                <div class="message sent">
+                    <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                    <div class="text">
+                        Hola, ¿cómo estás?
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                    <div class="text">
+                        ¡Hola! Estoy bien, gracias. ¿Y tú?
+                    </div>
+                </div>
+                <!-- Agrega más mensajes aquí -->
+            </div>
+
+            <div class="chat-input">
+                <textarea rows="3" placeholder="Escribe tu mensaje..."></textarea>
+                <button>Enviar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showChat(chatId) {
+            const chats = {
+                'juan': {
+                    header: 'Juan Pérez',
+                    messages: `
+                        <div class="message sent">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                Hola, ¿cómo estás?
+                            </div>
+                        </div>
+                        <div class="message received">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                ¡Hola! Estoy bien, gracias. ¿Y tú?
+                            </div>
+                        </div>
+                    `
+                },
+                'maria': {
+                    header: 'María García',
+                    messages: `
+                        <div class="message received">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                Buenas tardes, ¿en qué puedo ayudarte?
+                            </div>
+                        </div>
+                        <div class="message sent">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                Necesito asesoramiento en marketing digital.
+                            </div>
+                        </div>
+                    `
+                },
+                'carlos': {
+                    header: 'Carlos Rodríguez',
+                    messages: `
+                        <div class="message sent">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                ¿Cómo van los proyectos en agricultura?
+                            </div>
+                        </div>
+                        <div class="message received">
+                            <img src="https://via.placeholder.com/50" alt="Avatar" class="avatar">
+                            <div class="text">
+                                Todo va muy bien, estamos implementando nuevas técnicas.
+                            </div>
+                        </div>
+                    `
+                }
+            };
+
+            // Cambiar la conversación activa
+            document.querySelector('.chat-header h2').textContent = chats[chatId].header;
+            document.getElementById('messages').innerHTML = chats[chatId].messages;
+            
+            // Mostrar la sección de chat y ocultar la barra lateral
+            document.getElementById('chat-container').classList.remove('hide');
+            document.getElementById('sidebar').classList.add('hide');
+            
+            // Actualizar el estado de los enlaces
+            document.querySelectorAll('.sidebar ul li a').forEach(a => a.classList.remove('active'));
+            document.querySelector(`.sidebar ul li a[onclick="showChat('${chatId}')"]`).classList.add('active');
+        }
+
+        function backToConversations() {
+            // Ocultar la sección de chat y mostrar la barra lateral
+            document.getElementById('chat-container').classList.add('hide');
+            document.getElementById('sidebar').classList.remove('hide');
+        }
+    </script>
+
+</body>
+</html>

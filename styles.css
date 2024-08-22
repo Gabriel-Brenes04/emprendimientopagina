@@ -102,8 +102,8 @@ section {
 }
 
 #benefits .benefit img {
-    width: 50px;
-    height: 50px;
+    width: 70%;
+    height: 50%;
 }
 
 #testimonials {
@@ -208,4 +208,8 @@ footer .social-icons img {
     margin: 10;
     border: 100px;
 
+}
+
+html {
+    scroll-behavior: smooth;
 }

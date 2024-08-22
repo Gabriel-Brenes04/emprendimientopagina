@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sube tu Idea de Negocio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background-color: #B8860B;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #f1c24b 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header ul li {
+            float: right;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        form {
+            background: #B8860B;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        form input[type="text"], form input[type="email"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #f1c24b;
+            border: none;
+            color: #fff;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background: #f0b623;
+        }
+        .tags-input-wrapper {
+            background: #fff;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .tags-input-wrapper input[type="text"] {
+            border: none;
+            flex: 1;
+            padding: 5px;
+        }
+        .tags-input-wrapper .tag {
+            background: #f1c24b;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .tags-input-wrapper .tag .close {
+            margin-left: 8px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sube tu Idea de Negocio</h1>
+        
+        </div>
+    </header>
+
+    <div class="container">
+        <form action="subir_idea.php" method="post">
+            <label for="nombre">Nombre de tu idea de negocio:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Introduce el nombre de tu idea" required>
+
+            <label for="descripcion">Descripción de la idea:</label>
+            <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describe tu idea de negocio en detalle" required></textarea>
+
+            <label for="tags">Categorías (Etiquetas):</label>
+            <div class="tags-input-wrapper" id="tags-input-wrapper">
+                <input type="text" id="tags-input" placeholder="Escribe y presiona Enter" />
+            </div>
+
+            <input type="hidden" id="tags" name="tags">
+
+            <label for="email">Correo electrónico de contacto:</label>
+            <input type="email" id="email" name="email" placeholder="Introduce tu correo electrónico" required>
+
+            <input type="submit" value="Subir Idea">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tagsInput = document.getElementById("tags-input");
+            const tagsWrapper = document.getElementById("tags-input-wrapper");
+            const hiddenInput = document.getElementById("tags");
+            let tags = [];
+
+            tagsInput.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    const tagText = tagsInput.value.trim();
+                    if (tagText && !tags.includes(tagText)) {
+                        tags.push(tagText);
+                        addTag(tagText);
+                        tagsInput.value = "";
+                        updateHiddenInput();
+                    }
+                }
+            });
+
+            function addTag(text) {
+                const tag = document.createElement("span");
+                tag.className = "tag";
+                tag.innerText = text;
+
+                const closeBtn = document.createElement("span");
+                closeBtn.className = "close";
+                closeBtn.innerHTML = "&times;";
+                closeBtn.onclick = function () {
+                    tagsWrapper.removeChild(tag);
+                    tags = tags.filter(t => t !== text);
+                    updateHiddenInput();
+                };
+
+                tag.appendChild(closeBtn);
+                tagsWrapper.insertBefore(tag, tagsInput);
+            }
+
+            function updateHiddenInput() {
+                hiddenInput.value = tags.join(",");
+            }
+        });
+    </script>
+</body>
+</html>
