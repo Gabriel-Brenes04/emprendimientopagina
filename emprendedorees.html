@@ -12,28 +12,7 @@
             background-color: #f4f4f4;
         }
 
-        .navbar {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar h1 {
-            margin: 0;
-            display: inline-block;
-        }
-
-        .navbar input[type="text"] {
-            padding: 8px;
-            width: 200px;
-            margin-left: 20px;
-            border: none;
-            border-radius: 4px;
-        }
+      
 
         .main-container {
             display: flex;
@@ -77,6 +56,7 @@
             align-items: center;
         }
 
+       
         .profile img {
             border-radius: 50%;
             width: 70px;
@@ -137,6 +117,11 @@
             margin-right: 5px;
         }
 
+        .actions img{
+            width: 10%;
+            height: 15%;
+        }
+
         .like-icon {
             color: green;
         }
@@ -169,30 +154,19 @@
 </head>
 <body>
 
-    <!-- Barra de navegación -->
-    <div class="navbar">
-        <h1>Plataforma de Emprendedores</h1>
-        <input type="text" placeholder="Buscar emprendedores...">
-    </div>
+     <!-- Barra de navegación -->
+     <div>
+        <iframe style="width: 100%; height: 100%; border: 0;overflow: hidden;"src="header.html" title="header" ></iframe>
+        </div>
 
     <!-- Contenedor principal -->
     <div class="main-container">
-        
-        <!-- Barra lateral -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="dashboard.html">Inicio</a></li>
-                <li><a href="misideas.html">Mis ideas</a></li>
-                <li><a href="emprendedorees.html">Emprendedores</a></li>
-                <li><a href="mensajes.html">Mensajes</a></li>
-                <li><a href="user-config.html">Configuración</a></li>
-            </ul>
-        </div>
+       
 
         <!-- Sección de perfiles de emprendedores (feed) -->
         <div class="feed">
             <div class="profile">
-                <img src="pablo.jfif" alt="Foto de perfil">
+                <img src="./images/pablo.jfif" alt="Foto de perfil">
                 <div class="profile-content">
                     <h3>Juan Pérez</h3>
                     <p>Experto en desarrollo de software con 5 años de experiencia en startups tecnológicas.</p>
@@ -203,19 +177,19 @@
                     </div>
                     <div class="actions">
                         <button class="like-button">
-                            <span class="like-icon">👍</span>
-                            <span>Like</span>
+                      <img src="./images/likepaw.png" alt="like">
+                        
                         </button>
                         <button class="dislike-button">
-                            <span class="dislike-icon">👎</span>
-                            <span>Dislike</span>
+                            <img src="./images/dislikepaw.png" alt="dislike">
+                          
                         </button>
                     </div>
                 </div>
             </div>
 
             <div class="profile">
-                <img src="juam.jfif" alt="Foto de perfil">
+                <img src="./images/juam.jfif" alt="Foto de perfil">
                 <div class="profile-content">
                     <h3>Maria García</h3>
                     <p>Especialista en marketing digital con un enfoque en estrategias para pequeñas empresas.</p>
@@ -226,21 +200,21 @@
                     </div>
                     <div class="actions">
                         <button class="like-button">
-                            <span class="like-icon">👍</span>
-                            <span>Like</span>
+                            <img src="./images/likepaw.png" alt="like">
+           
                         </button>
                         <button class="dislike-button">
-                            <span class="dislike-icon">👎</span>
-                            <span>Dislike</span>
+                            <img src="./images/dislikepaw.png" alt="dislike">
+              
                         </button>
                     </div>
                 </div>
             </div>
 
             <div class="profile">
-                <img src="descargar.jfif" alt="Foto de perfil">
+                <img src="./images/descargar.jfif" alt="Foto de perfil">
                 <div class="profile-content">
-                    <h3>Carlos Rodríguez</h3>
+                    <h3>Ana Rodríguez</h3>
                     <p>Emprendedor en el sector de la agricultura sostenible con proyectos en diversas comunidades.</p>
                     <div class="skills">
                         <span>#Agricultura</span>
@@ -249,20 +223,20 @@
                     </div>
                     <div class="actions">
                         <button class="like-button">
-                            <span class="like-icon">👍</span>
-                            <span>Like</span>
+                            <img src="./images/likepaw.png" alt="like">
+                          
                         </button>
                         <button class="dislike-button">
-                            <span class="dislike-icon">👎</span>
-                            <span>Dislike</span>
+                            <img src="./images/dislikepaw.png" alt="dislike">
+                           
                         </button>
                     </div>
                 </div>
             </div>
             <div class="profile">
-                <img src="descargar.jfif" alt="Foto de perfil">
+                <img src="./images/descargar.jfif" alt="Foto de perfil">
                 <div class="profile-content">
-                    <h3>Carlos Rodríguez</h3>
+                    <h3>Paula Flores</h3>
                     <p>Emprendedor en el sector de la agricultura sostenible con proyectos en diversas comunidades.</p>
                     <div class="skills">
                         <span>#Agricultura</span>
@@ -271,12 +245,12 @@
                     </div>
                     <div class="actions">
                         <button class="like-button">
-                            <span class="like-icon">👍</span>
-                            <span>Like</span>
+                            <img src="./images/likepaw.png" alt="like">
+                           
                         </button>
                         <button class="dislike-button">
-                            <span class="dislike-icon">👎</span>
-                            <span>Dislike</span>
+                            <img src="./images/dislikepaw.png" alt="like">
+                
                         </button>
                     </div>
                 </div>

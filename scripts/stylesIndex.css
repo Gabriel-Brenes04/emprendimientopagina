@@ -1,0 +1,94 @@
+
+
+body {
+    background-color: white ;
+    margin: 0;
+}
+
+h1,h2,h3,ol{
+    font-family: "Bebas Neue", sans-serif;
+
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#benefits-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10%;
+    background-color: #f7e16e;
+}
+
+.benefits-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 21%;
+    background-color: #f7e16e;
+    
+}
+
+
+.benefits-text-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10%;
+    background-color: #f7e16e;
+}
+
+img{
+width: 20%;
+
+}
+
+#contactos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 21%;
+    width: 20%;
+}
+
+#navbar{
+    background-color: #e7ca2e;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    padding: 1%;
+}
+
+button{
+    padding: 1%;
+    margin-left:1%;
+    background-color: #FFD700;
+    border-radius: 10%;
+    border-color: #FFD700;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer{
+    height: 10%;
+}
+
+#about{
+    margin-bottom: 1%;
+    background-color: #f8df54;
+}
+
+#logo{
+    background-color: #f8d932;
+ 
+}
+
+#How-works{
+    background-color: #f8e998;
+}

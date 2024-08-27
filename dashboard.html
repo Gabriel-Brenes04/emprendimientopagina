@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emprendimientos - Plataforma de Emprendedores</title>
+    <title>LionRise</title>
     <style>
         /* Estilos generales */
         body {
@@ -12,28 +12,9 @@
             background-color: #f4f4f4;
         }
 
-        .navbar {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+        
 
-        .navbar h1 {
-            margin: 0;
-            display: inline-block;
-        }
-
-        .navbar input[type="text"] {
-            padding: 8px;
-            width: 200px;
-            margin-left: 20px;
-            border: none;
-            border-radius: 4px;
-        }
+     
 
         .main-container {
             display: flex;
@@ -121,29 +102,22 @@
             width: 50%;
         }
 
+    iframe{
+        padding: 0%;
+        margin: 0;
+        overflow-x:hidden;
+        overflow-Y:hidden;
+    }
+
     </style>
 </head>
 <body>
 
     <!-- Barra de navegación -->
     <div class="navbar">
-        <h1>Plataforma de Emprendedores</h1>
-        <input type="text" placeholder="Buscar emprendimientos...">
+    <iframe style="width: 100%; height: 100%; border: 0;overflow: hidden;"src="header.html" title="header" ></iframe>
     </div>
 
-    <!-- Contenedor principal -->
-    <div class="main-container">
-        
-        <!-- Barra lateral -->
-        <div class="sidebar">
-            <ul>
-                <li><a href="dashboard.html">Inicio</a></li>
-                <li><a href="misideas.html">Mis ideas</a></li>
-                <li><a href="emprendedorees.html">Emprendedores</a></li>
-                <li><a href="mensajes.html">Mensajes</a></li>
-                <li><a href="user-config.html">Configuración</a></li>
-            </ul>
-        </div>
 
         <!-- Sección de publicaciones (feed) -->
         <div class="feed">
