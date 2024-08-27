@@ -1,19 +1,15 @@
 
 
 body {
-    background-color: white ;
+
     margin: 0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     padding: 0;
+    background-color: #f7e16e;
 }
 
-html{
-    width: 100%;
-    height: 100%;
-    margin: 0;
-padding: 0;
-}
+
 
 h1,h2,h3,ol{
     font-family: "Bebas Neue", sans-serif;
@@ -57,6 +53,7 @@ div{
 
 img{
 width: 20%;
+height: 33%;
 
 }
 
@@ -91,7 +88,7 @@ footer{
 }
 
 #about{
-    margin-bottom: 1%;
+
     background-color: #f8df54;
 }
 
@@ -104,3 +101,50 @@ footer{
     background-color: #f8e998;
 }
 
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.item {
+    width: 30%;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+}
+
+.item h3, .item p {
+    margin: 10px 0;
+}
+
+.how-it-works {
+    background-color: #f5e8a8; /* Cambia el color de fondo a un tono pastel */
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados para suavizar el diseño */
+    max-width: 400px; /* Limita el ancho del contenedor */
+    margin: 20px auto; /* Centra el contenedor */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Añade una sombra para profundidad */
+}
+
+.how-it-works h2 {
+    font-size: 24px; /* Tamaño de fuente mayor para el título */
+    font-weight: bold; /* Resalta el título */
+    color: #333; /* Color del texto para mayor contraste */
+    margin-bottom: 15px; /* Espaciado entre el título y la lista */
+}
+
+.how-it-works ol {
+    list-style-type: decimal; /* Muestra la lista con números */
+    padding-left: 20px; /* Espaciado a la izquierda para las viñetas */
+    color: #555; /* Color de texto más suave para la lista */
+    font-size: 18px; /* Tamaño de fuente legible */
+}
+
+.how-it-works li {
+    margin-bottom: 10px; /* Espaciado entre los elementos de la lista */
+}

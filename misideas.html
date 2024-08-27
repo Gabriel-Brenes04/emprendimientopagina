@@ -48,19 +48,23 @@
 
         .post {
             background-color: #B8860B;
-            padding: 15px;
+            padding:5%;
             margin-bottom: 20px;
+            margin-left: 5%;
+            margin-right: 45%;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+     
         .post h3 {
             margin: 0;
+            color:white
         }
 
         .post p {
             margin: 10px 0;
-            color: #555;
+            color:white
         }
 
         .post .tags {
@@ -81,6 +85,11 @@
             padding: 20px;
         }
 
+        @media screen and (max-width:800){
+            .post{
+                width: 10%;
+            }
+        }
         /* Estilos responsive */
         @media (max-width: 768px) {
             .sidebar {
@@ -98,6 +107,7 @@
 
         img{
             width: 50%;
+            height: 50%;
         }
 
     </style>
@@ -113,6 +123,7 @@
         <div class="post">
             <h3>Agricultores en linea</h3>
             <p>Una tienda de productos orgánicos locales, que conecta a agricultores con consumidores a través de una plataforma en línea.</p>
+            <img src="./images/ganaderia.jpg" alt="ganaderia">
             <div class="tags">
                 <span>#Comercio</span>
                 <span>#Salud</span>
@@ -120,8 +131,9 @@
         </div>
 
             <div class="post">
-                <h3>Idea de Negocio 2</h3>
-                <p>Una tienda de productos orgánicos locales, que conecta a agricultores con consumidores a través de una plataforma en línea.</p>
+                <h3>Pasteles Personalizados</h3>
+                <p>Vende pastelitos a un precio accesible</p>
+                <img src="./images/pasteles.jfif" alt="ganaderia">
                 <div class="tags">
                     <span>#Comercio</span>
                     <span>#Salud</span>
@@ -129,8 +141,9 @@
             </div>
 
             <div class="post">
-                <h3>Mi propia pagina freelance</h3>
-                <p>Plataforma de servicios freelance para desarrolladores y diseñadores en América Latina.</p>
+                <h3>Cortes de cabello increibles</h3>
+                <p>Contactame si deseas un corte de cabello especial</p>
+                <img src="./images/corte.jfif" alt="ganaderia">
                 <div class="tags">
                     <span>#Freelance</span>
                     <span>#Tecnología</span>
