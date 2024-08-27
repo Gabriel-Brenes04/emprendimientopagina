@@ -79,6 +79,14 @@
         img{
             margin: 0;
         }
+
+        @media (max-width: 800px) {
+            .login-container {
+            
+            width: 60%;
+           height: auto;
+        }
+}
     </style>
 </head>
 <body>
@@ -87,7 +95,7 @@
         <h2>Registro</h2>
         <img src="RoarRise_Innovations.png" alt="">
         <form action="/login" method="POST">
-            <center>
+          
 
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
@@ -103,7 +111,7 @@
             
 
             <input type="submit" value="Crear cuenta">
-        </center>
+
         </form>
         <p> <a href="dashboard.html">Fase demo</a></p>
     </div>

@@ -79,15 +79,22 @@
         img{
             margin: 0;
         }
+
+        @media (max-width: 800px) {
+            .login-container {
+            
+            width: 60%;
+           height: auto;
+        }
+}
     </style>
 </head>
 <body>
 
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
-        <img src="RoarRise_Innovations.png" alt="">
-        <form action="/login" method="POST">
-            <center>
+       <form action="/login" method="POST">
+        
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
             
@@ -95,7 +102,7 @@
             <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
             
             <input type="submit" value="Iniciar Sesión">
-        </center>
+
         </form>
         <p>¿No tienes una cuenta? <a href="dashboard.html">Regístrate aquí</a></p>
     </div>
